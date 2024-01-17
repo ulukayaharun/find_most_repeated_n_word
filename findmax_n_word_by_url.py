@@ -23,7 +23,7 @@ class Findmaxrepeatedn:
 
         # Sort and get top 'n' words  
         sorted_list=sorted(dict_address.items(), key=lambda t:t[1], reverse=True)[:n]
-        df_address=pd.DataFrame(data=sorted_list,columns=["Kelimeler","Tekrar Sayilari"])
+        df_address=pd.DataFrame(data=sorted_list,columns=["Words","Frequencies"])
 
          # Write to an Excel file  
         writing_path="Word_Frequencies.xlsx"
@@ -31,5 +31,4 @@ class Findmaxrepeatedn:
             df_address.to_excel(writer, sheet_name='URL Count Page')
         
 
-if __name__ == '__main__' :
-    Findmaxrepeatedn.by_url("Posta Keşfet İçerikler Son 16 Ay - Full.xlsx",20)
+
